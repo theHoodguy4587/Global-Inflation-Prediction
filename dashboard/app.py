@@ -178,10 +178,7 @@ st.markdown(
 
 with st.sidebar:
     st.header("Prediction Controls")
-    api_url = os.getenv(
-    "INFLATION_API_URL",
-    "http://api:8000/predict"   
-    )
+    api_url = st.text_input("API endpoint", value="https://global-inflation-prediction-api.onrender.com/predict")
     selected_country = st.selectbox("Country", country_options, index=0)
     st.caption("Only user-facing macro inputs are shown. Lag features are generated automatically from the selected country's history.")
 
